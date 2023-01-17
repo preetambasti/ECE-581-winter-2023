@@ -1,0 +1,71 @@
+/////////////////////////////////////////////////////////////
+// Created by: Synopsys DC Ultra(TM) in wire load mode
+// Version   : P-2019.03-SP1-1
+// Date      : Sun Jan 15 22:28:49 2023
+/////////////////////////////////////////////////////////////
+
+
+module dff_4 ( d, clk, reset, q );
+  input d, clk, reset;
+  output q;
+  wire   n1;
+
+  SDFFARX1_RVT q_reg ( .D(d), .SI(1'b0), .SE(1'b0), .CLK(clk), .RSTB(n1), .Q(q) );
+  INVX0_RVT U4 ( .A(reset), .Y(n1) );
+endmodule
+
+
+module dff_0 ( d, clk, reset, q );
+  input d, clk, reset;
+  output q;
+  wire   n4;
+
+  SDFFARX1_RVT q_reg ( .D(d), .SI(1'b0), .SE(1'b0), .CLK(clk), .RSTB(n4), .Q(q) );
+  INVX0_RVT U4 ( .A(reset), .Y(n4) );
+endmodule
+
+
+module dff_1 ( d, clk, reset, q );
+  input d, clk, reset;
+  output q;
+  wire   n4;
+
+  SDFFARX1_RVT q_reg ( .D(d), .SI(1'b0), .SE(1'b0), .CLK(clk), .RSTB(n4), .Q(q) );
+  INVX0_RVT U4 ( .A(reset), .Y(n4) );
+endmodule
+
+
+module dff_2 ( d, clk, reset, q );
+  input d, clk, reset;
+  output q;
+  wire   n4;
+
+  SDFFARX1_RVT q_reg ( .D(d), .SI(1'b0), .SE(1'b0), .CLK(clk), .RSTB(n4), .Q(q) );
+  INVX0_RVT U4 ( .A(reset), .Y(n4) );
+endmodule
+
+
+module dff_3 ( d, clk, reset, q );
+  input d, clk, reset;
+  output q;
+  wire   n4;
+
+  SDFFARX1_RVT q_reg ( .D(d), .SI(1'b0), .SE(1'b0), .CLK(clk), .RSTB(n4), .Q(q) );
+  INVX0_RVT U4 ( .A(reset), .Y(n4) );
+endmodule
+
+
+module simple_adder ( a, b, cin, sum, cout, clock, reset );
+  input a, b, cin, clock, reset;
+  output sum, cout;
+  wire   a_reg, b_reg, cin_reg, sum_gen, cout_gen;
+
+  dff_4 dff_a ( .d(a), .clk(clock), .reset(reset), .q(a_reg) );
+  dff_3 dff_b ( .d(b), .clk(clock), .reset(reset), .q(b_reg) );
+  dff_2 dff_cin ( .d(cin), .clk(clock), .reset(reset), .q(cin_reg) );
+  dff_1 dff_cout ( .d(cout_gen), .clk(clock), .reset(reset), .q(cout) );
+  dff_0 dff_sum ( .d(sum_gen), .clk(clock), .reset(reset), .q(sum) );
+  FADDX1_RVT U2 ( .A(a_reg), .B(b_reg), .CI(cin_reg), .CO(cout_gen), .S(
+        sum_gen) );
+endmodule
+

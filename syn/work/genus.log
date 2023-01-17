@@ -1,0 +1,31 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2022 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[22:55:03.268682] Configured Lic search path (20.02-s004): 5280@cadence-lic.cecs.pdx.edu:27000@synopsys-lic.cat.pdx.edu
+
+Version: 21.12-s068_1, built Fri Mar 04 14:12:46 PST 2022
+Options: 
+Date:    Sun Jan 15 22:55:03 2023
+Host:    mo.ece.pdx.edu (x86_64 w/Linux 3.10.0-1160.81.1.el7.x86_64) (1core*32cpus*32physical cpus*Intel Xeon E312xx (Sandy Bridge, IBRS update) 16384KB) (87477784KB)
+PID:     1638
+OS:      CentOS Linux release 7.9.2009 (Core)
+
+
+[22:55:03.408194] Periodic Lic check successful
+[22:55:03.408211] Feature usage summary:
+[22:55:03.408211] Genus_Synthesis
+Checking out license: Genus_Synthesis
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Loading tool scripts...
+Finished loading tool scripts (14 seconds elapsed).
+
+Sourcing genus_startup.tcl...
+  Setting attribute of root '/': 'timing_report_fields' = delay arrival cell flags timing_point
